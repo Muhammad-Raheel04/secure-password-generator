@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Password Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="show-password">
+  <!-- Password Generator -->
+  <div class="container">
+    <h1>Secure Password Generator</h1>
+    <p class="subtitle">Create strong, secure passwords instantly</p>
+
+    <div class="input-group">
+      <label for="length">Password Length</label>
+      <input type="number" id="length" min="4" max="32" value="12" placeholder="e.g. 12">
+      <div class="strength-meter">
+        <div class="strength-fill" id="strengthFill"></div>
+      </div>
+    </div>
+
+    <div class="options">
+      <div class="option-item">
+        <input type="checkbox" id="uppercase" checked>
+        <label for="uppercase">Uppercase (A-Z)</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="lowercase" checked>
+        <label for="lowercase">Lowercase (a-z)</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="numbers" checked>
+        <label for="numbers">Numbers (0-9)</label>
+      </div>
+      <div class="option-item">
+        <input type="checkbox" id="symbols" checked>
+        <label for="symbols">Symbols (!@#$)</label>
+      </div>
+    </div>
+
+    <div class="password-box" id="passwordDisplay">
+      Your password will appear here
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" id="generateBtn">
+        <i class="fas fa-key"></i> Generate
+      </button>
+      <button class="btn btn-secondary" id="copyBtn">
+        <i class="fas fa-copy"></i> Copy
+      </button>
+      <button class="btn btn-share" id="shareBtn">
+        <i class="fas fa-share-alt"></i> Share
+      </button>
+      <button class="btn btn-outline" id="resetBtn">
+        <i class="fas fa-redo"></i> Clear
+      </button>
+    </div>
+
+    <!-- Chatbot Info Banner -->
+    <div class="chatbot-info">
+      <div class="chatbot-info-icon">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="chatbot-info-content">
+        <h4>Need help creating a strong password?</h4>
+        <p>Our AI assistant can help you generate secure passwords and answer your security questions.</p>
+        <button class="chatbot-info-btn" id="chatbotInfoBtn">
+          <i class="fas fa-comments"></i> Ask the AI Assistant
+        </button>
+      </div>
+    </div>
+
+    <div class="saved-passwords">
+      <h3>Recently Generated</h3>
+      <ul id="passwordList"></ul>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Chatbase Icon -->
+  <div class="chat-icon" id="chatToggle" title="Chat with AI Assistant">
+    <i class="fas fa-robot"></i>
+    <div class="chat-badge">1</div>
+  </div>
+
+  <!-- Chat Popup -->
+  <div class="chat-popup" id="chatPopup">
+    <div class="chat-header">
+      <h3>AI Password Assistant</h3>
+      <button class="close-chat" id="closeChat">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <iframe src="https://www.chatbase.co/chatbot-iframe/ryycjU80c704Rb11-BUvm" frameborder="0"></iframe>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
